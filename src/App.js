@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Banner from './components/Banner';
+import Bestdeal from './components/Bestdeal';
+import Bestdealers from './components/Bestdealers';
+import Brabd from './components/Brabd';
+import Deal from './components/Deal';
+import Featured from './components/Featured';
+import Footer from './components/Footer';
+import Menu from './components/Menu';
+import Menubar from './components/Menubar';
+import Newsletter from './components/Newsletter';
+import Recentlyview from './components/Recentlyview';
+import Slider from './components/Slider';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='' >
+     <Menubar />
+     <Menu />
+     <Slider />
+    <Deal />
+    <Featured />
+    <Bestdeal />
+    <Bestdealers />
+    <Banner />
+    <Recentlyview />
+    <Brabd />
+    <Newsletter />
+    <Footer />
     </div>
   );
 }
