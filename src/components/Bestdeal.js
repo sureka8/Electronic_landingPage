@@ -8,6 +8,8 @@ import pc1 from '../img/bestdealsmall/img1.jpg'
 import pc2 from '../img/bestdealsmall/img2.jpg'
 import pc3 from '../img/bestdealsmall/img3.jpg'
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { IoIosGitCompare } from "react-icons/io";
+import { CiHeart } from "react-icons/ci";
 const Bestdeal = () => {
     const product = [
         {id:1, category:'Tab' , name:'Samsung Tab A43' ,img:img1, price:685.00},
@@ -38,7 +40,8 @@ const Bestdeal = () => {
         </div>
         <div className='grid grid-cols-6 gap-2 py-3'>
             {product.map((product) =>(
-  <div className={`bg-white h-72 p-2  ${product.id === 3 ? 'col-span-2 row-span-2 h-auto' : ''}`}>
+                
+  <div className={`bg-white h-72 p-2 shadow-lg transform transition-transform hover:scale-110 hover:shadow-2xl relative group ${product.id === 3 ? 'col-span-2 row-span-2 h-auto' : ''}`}>
     <div className='h-20'> <p className='text-secondary text-sm'>{product.category}</p>
     <p className='text-primary text-sm font-bold'>{product.name}</p></div>
    
@@ -70,7 +73,19 @@ const Bestdeal = () => {
         
         <MdOutlineAddShoppingCart className='bg-blue-700 p-1 font-bold h-7 w-7 text-white  rounded-full ' />
         </div>}
+
+        <div className='px-4 border-t-[1px] border-slate-300 text-slate-400 flex space-x-2 py-2 opacity-0 group-hover:opacity-100 transition-opacity  bg-white w-full left-0'>
+            <div className='flex space-x-1 items-center text-sm'>
+              <IoIosGitCompare />
+              <p>Compare</p>
+            </div>
+            <div className='flex space-x-1 items-center text-sm'>
+              <CiHeart />
+              <p>Add to Wishlist</p>
+            </div>
+          </div>
   </div>
+
             ))}
           
         </div>

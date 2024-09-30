@@ -8,7 +8,8 @@ import img5 from '../img/featured/img5.jpg';
 import img6 from '../img/featured/img6.jpg';
 import img7 from '../img/featured/img7.jpg';
 import img8 from '../img/featured/img8.jpg';
-
+import { IoIosGitCompare } from "react-icons/io";
+import { CiHeart } from "react-icons/ci";
 const Recentlyview = () => {
   const product = [
     { id: 1, category: 'Tab', name: 'Samsung Tab A43', img: img1, price: 685.00 },
@@ -53,7 +54,7 @@ const Recentlyview = () => {
       </div>
       <div className='flex py-5'>
         {product.slice(startIndex, startIndex + itemsToShow).map((item) => (
-          <div key={item.id} className='border-r-[1px] border-r-slate-300 px-4 w-80'>
+          <div key={item.id} className='border-r-[1px] border-r-slate-300 hover:border-r-0 px-4 w-80 shadow-lg transform transition-transform  hover:shadow-2xl relative group'>
             <div className='h-16'>
               <p className='text-xs text-gray-400'>{item.category}</p>
               <p className='text-xs font-bold text-primary mt-3'>{item.name}</p>
@@ -67,6 +68,16 @@ const Recentlyview = () => {
                 <MdOutlineAddShoppingCart className='bg-blue-700 p-1 font-bold h-6 w-6 text-white rounded-full' />
               </div>
             </div>
+            <div className='px-4 border-t-[1px] border-slate-300 text-slate-400 flex space-x-2 py-2 opacity-0 group-hover:opacity-100 transition-opacity absolute bg-white w-full left-0 '>
+            <div className='flex space-x-1 items-center justify-between text-sm'>
+              <IoIosGitCompare />
+              <p>Compare</p>
+            </div>
+            <div className='flex space-x-1 items-center text-sm'>
+              <CiHeart />
+              <p>Add to Wishlist</p>
+            </div>
+          </div>
           </div>
         ))}
       </div>

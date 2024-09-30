@@ -32,9 +32,9 @@ const Menu = () => {
         <AiOutlineShopping />
       </div>
     </nav>
-    <div className='container mx-auto px-20 py-4 flex items-center space-x-14'>
+    <div className='container mx-auto px-20  flex items-center space-x-14'>
       
-      <div className='w-56 bg-blue-500 text-white text-lg font-semibold py-2 px-8 flex items-center space-x-3 '
+      <div className='w-56 bg-blue-500 text-white text-lg font-semibold py-2 px-8 flex items-center space-x-3 rounded-t-md '
       onClick={() => setClick(true)}>
          
          <div className='flex '>

@@ -8,6 +8,8 @@ import img6 from '../img/bestsellers/img6.jpg'
 import img7 from '../img/bestsellers/img7.jpg'
 import img8 from '../img/bestsellers/img8.jpg'
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { IoIosGitCompare } from "react-icons/io";
+import { CiHeart } from "react-icons/ci";
 const Bestdealers = () => {
   const product =[
     {id:1,name:'Tablet Air 3 WiFi 64GB Gold',category:'Tablet',image:img1,price:629.00},
@@ -33,7 +35,7 @@ const Bestdealers = () => {
     </div>
     <div className='grid grid-cols-4 gap-10  py-10'>
       {product.map((product) =>(
-        <div className='border-r-[1px] border-r-slate-300 px-4 h-40 flex space-x-3 items-center'>
+        <div className='border-r-[1px] border-r-slate-300 px-4 h-40 flex space-x-3 items-center shadow-lg transform transition-transform hover:scale-110 hover:shadow-2xl relative group'>
           <div>
             <img src={product.image} />
           </div>
@@ -44,6 +46,16 @@ const Bestdealers = () => {
               <p className='text-gray-700'>${product.price}</p>
               <MdOutlineAddShoppingCart className='bg-blue-700 p-1 font-bold h-6 w-6 text-white  rounded-full '   />
             </div>
+            <div className='px-4 border-t-[1px] border-slate-300 text-slate-400 flex space-x-2 py-2 opacity-0 group-hover:opacity-100 transition-opacity absolute bg-white w-full left-0 pl-24'>
+            <div className='flex space-x-1 items-center justify-between text-sm'>
+              <IoIosGitCompare />
+              <p>Compare</p>
+            </div>
+            <div className='flex space-x-1 items-center text-sm'>
+              <CiHeart />
+              <p>Add to Wishlist</p>
+            </div>
+          </div>
           </div>
         </div>
       ))}

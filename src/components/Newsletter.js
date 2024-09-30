@@ -2,7 +2,7 @@ import React from 'react'
 import { FiSend } from "react-icons/fi";
 const Newsletter = () => {
   return (
-    <div className='bg-red-400  py-3'>
+    <div className='bg-primary  py-3'>
         <div className='container px-20 flex items-center justify-between'>
             <div className='flex items-center text-white space-x-3 text-2xl'>
                 <FiSend />

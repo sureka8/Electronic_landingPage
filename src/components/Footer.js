@@ -5,8 +5,14 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+import img1  from  '../img/cards/img1.jpg'
+import img2 from '../img/cards/img2.jpg'
+import img3 from   '../img/cards/img3.jpg'
+import img4 from '../img/cards/img4.jpg'
+import img5 from '../img/cards/img5.jpg'
 const Footer = () => {
   return (
+    <div>
     <div className='py-10 container px-20 flex space-x-10 justify-between h-auto'> 
     <div>
     <div className='h-14 w-36'>
@@ -70,6 +76,17 @@ const Footer = () => {
             <li>MSI</li>
             <li>Asus</li>
         </ul>
+    </div>
+    </div>
+    <div className='bg-slate-300 h-12 py-2 w-full px-20 flex justify-between items-center'>
+      <p>© Copyrights 2024 All rights reserved. Powered by <a>xCommerz™</a></p>
+      <div className='h-8 flex space-x-1 '>
+<img src={img1}  className='h-full '/> 
+<img src={img2}  className='h-full '/> 
+<img src={img3}  className='h-full '/> 
+<img src={img4}  className='h-full '/> 
+<img src={img5}  className='h-full '/> 
+      </div>
     </div>
     </div>
   )

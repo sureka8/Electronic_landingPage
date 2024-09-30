@@ -9,6 +9,8 @@ import img7 from '../img/featured/img7.jpg'
 import img8 from '../img/featured/img8.jpg'
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import img from '../img/featured1/img1.jpg'
+import { IoIosGitCompare } from "react-icons/io";
+import { CiHeart } from "react-icons/ci";
 const Featured = () => {
     const product = [
         {id:1, category:'Tab' , name:'Samsung Tab A43' ,img:img1, price:685.00},
@@ -21,10 +23,10 @@ const Featured = () => {
         {id:8, category:'Camera' , name:'Camera C430W 4k Waterproof' ,img:img8, price:685.00}
     ]
   return (
-    <div className='h-screen container mx-auto px-20 mt-3'>
+    <div className='h-auto container mx-auto px-20 mt-3 py-4'>
         <div className='flex '>
             
-            <div className='w-1/4 border-blue-700 border-[3px] rounded-xl p-4 ' >
+            <div className='w-1/5 border-blue-700 border-[3px] rounded-xl p-4 ' >
             <div className='h-24  flex items-center justify-between'> 
                 <p className='text-xl'>Special <br/> Offer</p>
                 <div className='bg-blue-700  h-20 w-20 rounded-full flex items-center justify-center text-white flex-col'>
@@ -77,7 +79,7 @@ const Featured = () => {
             </div>
 
             {/* products */}
-            <div className='w-3/4 px-5'>
+            <div className='w-4/5 px-4'>
                 <div className='border-b-[1px] border-b-slate-400  '>
                     <ul className='flex items-center justify-center space-x-5'>
                     <li className='hover:font-bold hover:border-b-[3px] hover:border-b-blue-700 py-2'>Featured</li>
@@ -86,28 +88,42 @@ const Featured = () => {
                     </ul>
                    
                 </div>
-                <div className='mt-5 grid grid-cols-4 gap-10 '>
-                    {product.map((product) =>(
-                        <div className='border-r-[1px] border-r-slate-300 px-4 h-64'>
-                            <div className='h-20 '>
-                            <p>{product.category}</p>
-                            <p className='text-blue-700 font-bold text-sm'>{product.name}</p>
-                            </div>
-                           
-                            <div  className='h-40 '>
-                            <img src={product.img} className='h-full object-cover ' />
-                            </div>
-                            <div className='flex items-center justify-between'>
-                                <p className=' '>${product.price}</p>
-                                <div >
-                                <MdOutlineAddShoppingCart className='bg-blue-700 p-1 font-bold h-6 w-6 text-white  rounded-full '   />
-                                </div>
-                               
-                            </div>
-                        </div>
-                    ))}
-                    
-                </div>
+                <div className='mt-5 grid grid-cols-4 gap-10'>
+      {product.map((product) => (
+        <div
+          className='border-r-[1px] border-r-slate-300 px-4 h-auto shadow-lg transform transition-transform hover:scale-110 hover:shadow-2xl relative group'
+          key={product.id}
+        >
+          <div className='h-20'>
+            <p>{product.category}</p>
+            <p className='text-blue-700 font-bold text-sm'>{product.name}</p>
+          </div>
+
+          <div className='h-56'>
+            <img src={product.img} className='h-full object-cover' alt={product.name} />
+          </div>
+
+          <div className='flex items-center justify-between mt-2'>
+            <p>${product.price}</p>
+            <div>
+              <MdOutlineAddShoppingCart className='bg-blue-700 p-1 font-bold h-6 w-6 text-white rounded-full' />
+            </div>
+          </div>
+          <div className='px-4 border-t-[1px] border-slate-300 text-slate-400 flex space-x-2 py-2 opacity-0 group-hover:opacity-100 transition-opacity absolute bg-white w-full left-0'>
+            <div className='flex space-x-1 items-center text-sm'>
+              <IoIosGitCompare />
+              <p>Compare</p>
+            </div>
+            <div className='flex space-x-1 items-center text-sm'>
+              <CiHeart />
+              <p>Add to Wishlist</p>
+            </div>
+          </div>
+          {/* Hidden by default, shown on hover */}
+        
+        </div>
+      ))}
+    </div>
             </div>
         </div>
  
